@@ -74,12 +74,15 @@ The application will start on http://localhost:8080.
 ## Database Configuration
 In application.properties, you can customize the following properties:
 ```bash
-spring.datasource.url=jdbc:mysql://localhost:3306/mydatabase
+spring.datasource.url=jdbc:mysql://localhost:3306/testdb?useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
-spring.datasource.password=secret
+spring.datasource.password=yourpassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
-spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
 ```
 
 ## Postman Collection
@@ -114,7 +117,7 @@ spring-boot-rest-api-demo
 ```
 
 ## Contact & Blog
-* **Author:** Sahan Dilshan 
+* **Author:** Kundan Sharma
 * **Blog Post:** For a detailed walkthrough of this project, check out the blog post explaining the setup, structure, and how each class works. 
 * **Contributions:** Feel free to fork this repo, open issues, or submit pull requests!
 
